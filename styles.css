@@ -124,14 +124,9 @@
     height: fit-content;
   }
 
-  .close {
-    display: none;
-  }
+
 
   .answer {
     display: none;
   }
 
-  .question-holder:target .answer {
-    display: block;
-  }
