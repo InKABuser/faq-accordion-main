@@ -19,7 +19,7 @@ addButtons.forEach(button => {
     // Show the answer and the remove (minus) button, hide the add (plus) button
     answer.style.display = 'block';
     this.style.display = 'none';  // Hide the add button
-    removeButton.style.display = 'block';  // Show the remove button
+    removeButton.style.display = 'grid';  // Show the remove button
   });
 });
 
@@ -35,6 +35,6 @@ removeButtons.forEach(button => {
     // Hide the answer and the remove (minus) button, show the add (plus) button
     answer.style.display = 'none';
     this.style.display = 'none';  // Hide the remove button
-    addButton.style.display = 'inline';  // Show the add button
+    addButton.style.display = 'grid';  // Show the add button
   });
 });

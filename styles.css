@@ -78,7 +78,7 @@
     background-repeat: no-repeat;
     background-position: top;
     background-color: var(--Light-pink);
-    background-size: 100%;
+    /* background-size: 100% 100% ; */
   }
 
   main {
@@ -87,19 +87,34 @@
     width: 100%;
     max-width: 40rem;
     background-color: var(--white);
-    padding: 1rem;
+    padding: 2rem 1rem;
     border-radius: 0.5rem;
     box-shadow: 0rem 0rem 5rem gray;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr min-content;
+    row-gap: 2rem;
   }
   main > *:not(:first-child) {
     margin-top: 1rem;
   }
   .title-logo {
     display: flex;
+    gap: 1rem;
+    grid-column: 1/-1;
+  }
+  .title-logo img{
+    width: 2rem;
+    aspect-ratio: 1;
+  }
+  .title-logo h1 {
+    font-size: 3rem;
+    color: var(--Dark-purple);
   }
   
   .block {
     display: flex;
+    grid-column: 1/-1;
     flex-direction: column;
   }
   .block img {
@@ -107,26 +122,65 @@
     aspect-ratio: 1;
   }
   .question-holder {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr min-content;
   }
 
   .question-holder > * {
     display: inline-block;
   }
+  .question-holder img {
+    max-width: fit-content;
+  }
   .question-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-variation-settings: 'wght' 700;
+    color: var(--Dark-purple);
   }
 
-  .open {
+  .add {
     height: fit-content;
+    width: 2rem;
+    aspect-ratio: 1;
+    margin-inline: 1rem;
+    grid-template-columns: subgrid;
+  }
+  .remove {
+    height: fit-content;
+    width: 2rem;
+    aspect-ratio: 1;
+    margin-inline: 1rem;
+    grid-template-columns: subgrid;
   }
 
 
 
   .answer {
     display: none;
+    color: var(--Grayish-purple);
   }
 
+.question-text:hover{
+    color: purple;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .question-text {
+      max-width: 20ch;
+      font-size: 1rem;
+    }
+    .home {
+      background-image: url(assets/images/background-pattern-mobile.svg);
+      background-size: 100vw;
+    }
+    .title-logo h1 {
+      font-size: 2rem;
+    }
+    .add {
+      justify-self: end;
+    }
+    .question-holder:last-child {
+      justify-content: end;
+    }
+  }
